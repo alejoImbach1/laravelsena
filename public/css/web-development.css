@@ -1,0 +1,26 @@
+.div-main{
+    width: 100%;
+    position: relative;
+    padding-top: 80px;
+    display: flex;
+
+}
+.development-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nav-development-sections{
+    position: sticky;
+    top: 80px;
+    width: 180px;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.section-content{
+    width: 100%;
+    padding: 20px 40px;
+
+}

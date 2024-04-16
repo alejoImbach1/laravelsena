@@ -2,11 +2,12 @@
 @section('content')
     @include('webdevelopment.assignments.course.create')
     <!-- Button trigger modal -->
-    <div>
+    <div class="">
+        <h1 class="text-center mb-3">Crud Curso</h1>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCourse">
             Crear curso
         </button>
-        <table class="table table-bordered">
+        <table class="table table-bordered mt-2">
             <thead>
                 <tr>
                     <th scope="col">ID</th>

@@ -11,7 +11,7 @@ Route::get('/p',function(){
 
 Route::controller(AppController::class)->group(function () {
     Route::get('/', 'index')->name('app.index');
-    Route::get('/web-development', 'IndexWebDevelopment')->name('app.webdevelopment');
+    Route::get('/web-development', 'WebDevelopmentDefault')->name('app.webDevelopmentDefault');
 
 });
 

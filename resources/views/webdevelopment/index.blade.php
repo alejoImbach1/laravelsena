@@ -1,27 +1,22 @@
 @include('layouts.head')
+<link rel="stylesheet" href="{{ asset('css/web-development.css') }}">
 </head>
 
 <body>
-    @include('layouts.header', ['enunciado' => $enunciado])
-    <div class="d-flex">
-        <div class="nav flex-column w-25 ps-3 pe-3">
-            <div class="accordion" id="accordionPanelsStayOpenExample">
-                <div class="accordion-item border-0">
-                    <button class="accordion-button p-2" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                        aria-controls="panelsStayOpen-collapseOne">
-                        Tareas
-                    </button>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                        <div class="accordion-body">
-                            <a class="nav-link" href={{ route('course.index') }}>Crud curso</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    @include('layouts.header', ['enunciado' => "Desarrollo web"])
+    <div class="div-main">
+        <nav class="nav-development-sections">
+            <ul class="development-section p-0 text-center">
+                <a href="{{ route('app.webDevelopmentDefault') }}">Descripción</a>
+            </ul>
+            <hr>
+            <ul class="development-section p-0 text-center">
+                <h5>Tareas</h5>
+                <a href="{{ route('course.index') }}">Curso</a>
+            </ul>
+        </nav>
 
-        <div class="d-flex w-100 justify-content-center">
+        <div class="section-content">
             @yield('content')
         </div>
     </div>

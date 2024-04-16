@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary justify-content-between ps-5 pe-5">
+<nav class="position-fixed top-0 w-100 z-2 navbar navbar-expand-lg bg-body-tertiary justify-content-between ps-5 pe-5">
     <div class="d-flex">
         <a class="navbar-brand" href={{route('app.index')}}><svg class="logo-sena" version="1.1" id="svg12"
                 sodipodi:docname="SENA logo.svg" xmlns:cc="http://creativecommons.org/ns#"
@@ -44,7 +44,7 @@
                         Competencias
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href={{route('app.webdevelopment')}}>Desarrollo web</a></li>
+                        <li><a class="dropdown-item" href={{route('app.webDevelopmentDefault')}}>Desarrollo web</a></li>
                     </ul>
                 </li>
             </ul>

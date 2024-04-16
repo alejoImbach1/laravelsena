@@ -10,7 +10,7 @@ class AppController extends Controller
         return view('index');
     }
 
-    public function IndexWebDevelopment(){
-        return view('webdevelopment.index')->with('enunciado','Desarrollo web');
+    public function webDevelopmentDefault(){
+        return view('webdevelopment.default');
     }
 }

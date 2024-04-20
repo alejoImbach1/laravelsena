@@ -17,7 +17,7 @@ class CourseSeeder extends Seeder
         Course::factory()->count(10)->create();
         $courses = Course::all();
         foreach ($courses as $course) {
-            Storage::copy('default/reflexión_sobre_programación.pdf', 'public/files/'.$course->file_pdf);
+            Storage::copy('default/reflexión_sobre_programación.pdf', 'public/files/course/'.$course->file_pdf);
         }
     }
 }

@@ -1,7 +1,5 @@
-@include('layouts.head')
-</head>
+@extends('layouts.html')
 
-<body>
-    @include('layouts.header',['enunciado' => 'Laravel Sena'])
-
-    @include('layouts.foot')
+@section('body')
+    @include('layouts.header', ['enunciado' => 'Laravel Sena'])
+@endsection

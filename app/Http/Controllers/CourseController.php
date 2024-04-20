@@ -12,6 +12,7 @@ class CourseController extends Controller
     {
         $courses = Course::all();
         return view('webdevelopment.assignments.course.index')->with([
+            'tituloPagina' => 'Crud curso',
             'enunciado' => 'Cursos',
             'courses' => $courses
         ]);
@@ -24,7 +25,7 @@ class CourseController extends Controller
         $aux = $request->except('_token');
         $aux['file_pdf'] = $fileName;
         Course::create($aux);
-        $file->storeAs('public/files', $fileName);
+        $file->storeAs('public/files/course', $fileName);
         return to_route('course.index');
     }
 

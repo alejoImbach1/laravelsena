@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <iframe src={{asset('storage/files/'.$course->file_pdf)}} class="w-100 vh-100"></iframe>
+                <iframe src={{asset('storage/files/course/'.$course->file_pdf)}} class="w-100 vh-100"></iframe>
             </div>
         </div>
     </div>

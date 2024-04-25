@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 class AppController extends Controller
 {
     public function index(){
-        return view('index',['tituloPagina' => 'Laravel sena']);
+        return view('index',['enunciado' => 'Sena laravel']);
     }
 
     public function webDevelopmentDefault(){
-        return view('webdevelopment.default',['tituloPagina' => 'Descripción - desarrollo web']);
+        return view('webdevelopment.index',[
+            'enunciado' => 'Desarrollo web',
+            'content' => 'webdevelopment.default'
+        ]);
     }
 }

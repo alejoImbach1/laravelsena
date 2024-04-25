@@ -1,10 +1,10 @@
-@extends('layouts.html')
-
-@section('body')
+<x-html>
     @pushOnce('links')
         <link rel="stylesheet" href="{{ asset('css/webdevelopment/web-development.css') }}">
     @endPushOnce
-    @include('layouts.header', ['enunciado' => 'Desarrollo web'])
+
+    <x-header enunciado="Desarrollo web" />
+
     <div class="div-main">
         <nav class="nav-development-sections">
             <ul class="development-section p-0 text-center">
@@ -20,7 +20,7 @@
         </nav>
 
         <div class="section-content">
-            @yield('content')
+            @include($content)
         </div>
     </div>
-@endsection
+</x-html>

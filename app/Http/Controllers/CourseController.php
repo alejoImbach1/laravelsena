@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\MyOwn\classes\Utility;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -11,9 +12,8 @@ class CourseController extends Controller
     public function index()
     {
         $courses = Course::all();
-        return view('webdevelopment.assignments.course.index')->with([
-            'tituloPagina' => 'Crud curso',
-            'enunciado' => 'Cursos',
+        return view('webdevelopment.index',[
+            'content' => 'webdevelopment.assignments.course.index',
             'courses' => $courses
         ]);
     }
@@ -26,6 +26,7 @@ class CourseController extends Controller
         $aux['file_pdf'] = $fileName;
         Course::create($aux);
         $file->storeAs('public/files/course', $fileName);
+        Utility::sendAlert('success','Se registró exitosamente');
         return to_route('course.index');
     }
 
@@ -41,7 +42,8 @@ class CourseController extends Controller
         $aux = $request->except('_token');
         $aux['file_pdf'] = $fileName;
         Course::find($id)->update($aux);
-        $file->storeAs('public/files', $fileName);
+        $file->storeAs('public/files/course', $fileName);
+        Utility::sendAlert('success','Se actualizó exitosamente');
         return to_route('course.index');
     }
 
@@ -49,10 +51,7 @@ class CourseController extends Controller
     {
         Storage::delete('public/files/' . Course::find($id)->file_pdf);
         Course::destroy($id);
+        Utility::sendAlert('warning','Se eliminó el registro');
         return to_route('course.index');
-    }
-
-    public function pdfDownload($file_pdf){
-        return Storage::download('public/files/'.$file_pdf);
     }
 }

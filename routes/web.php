@@ -24,9 +24,6 @@ Route::controller(AppController::class)->group(function () {
 
 });
 
-Route::controller(CourseController::class)->group(function () {
-    Route::get('/pdf-download/{file}', 'pdfDownload')->name('course.pdfdownload');
-});
-Route::resource('course', CourseController::class);
+Route::resource('course', CourseController::class)->except(['create','edit','show']);
 
-Route::resource('pqrsd',PqrsdController::class);
+Route::resource('pqrsd',PqrsdController::class)->only(['index','store']);
